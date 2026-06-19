@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+{% block title %}About — Resume Screening AI{% endblock %}
+{% block content %}
+
+<!-- ================= ABOUT HERO ================= -->
+<section class="about-hero text-center">
+  <div class="container">
+    <h1 class="fw-bold">About Resume Screening AI</h1>
+    <p class="lead text-secondary mt-3 col-lg-9 mx-auto">
+      An intelligent, AI-powered system designed to help recruiters and HR teams
+      quickly identify the most relevant resumes for a given job role.
+    </p>
+  </div>
+</section>
+
+<style>
+.about-hero{
+  padding:80px 0 60px;
+  background:linear-gradient(180deg,#0b122f,#020617);
+}
+</style>
+
+<!-- ================= PURPOSE ================= -->
+<section class="py-5">
+  <div class="container">
+    <div class="info-card mx-auto">
+      <h3 class="fw-bold mb-3 text-center">📄 Project Purpose</h3>
+      <p class="text-secondary fs-5 text-center">
+        Companies receive hundreds or even thousands of resumes for a single job.
+        Manual screening is slow, error-prone, and time-consuming.
+      </p>
+      <p class="text-secondary fs-5 text-center mt-3">
+        <b>Resume Screening AI</b> automates this process by ranking resumes
+        based on how closely they match the job description — saving time,
+        effort, and hiring cost.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+.info-card{
+  max-width:900px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:40px;
+  box-shadow:0 0 40px rgba(79,70,229,.25);
+}
+</style>
+
+<!-- ================= HOW AI WORKS ================= -->
+<section class="py-5 text-center" style="background:linear-gradient(180deg,#020617,#0a1028)">
+  <div class="container">
+    <h2 class="fw-bold mb-4">How <span class="text-info">AI Works</span></h2>
+    <p class="text-secondary fs-5 mb-5">
+      This system uses Natural Language Processing (NLP) techniques instead of complex model training.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="ai-card h-100">
+          <i class="bi bi-file-text ai-icon"></i>
+          <h5 class="fw-semibold mt-3">Text Extraction</h5>
+          <p class="text-secondary">
+            Text is extracted from resumes and job descriptions (PDF / TXT format).
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="ai-card h-100">
+          <i class="bi bi-cpu ai-icon"></i>
+          <h5 class="fw-semibold mt-3">NLP Processing</h5>
+          <p class="text-secondary">
+            Text is cleaned, normalized, and converted into numerical vectors using TF-IDF.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="ai-card h-100">
+          <i class="bi bi-graph-up-arrow ai-icon"></i>
+          <h5 class="fw-semibold mt-3">Similarity Scoring</h5>
+          <p class="text-secondary">
+            Cosine similarity calculates how closely each resume matches the job description.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ai-card{
+  background:rgba(255,255,255,.05);
+  border-radius:18px;
+  padding:32px 24px;
+  border:1px solid rgba(255,255,255,.12);
+  transition:.35s;
+}
+.ai-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 28px rgba(6,182,212,.35);
+}
+.ai-icon{
+  font-size:3rem;
+  color:#06b6d4;
+}
+</style>
+
+<!-- ================= WHY IT MATTERS ================= -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Why <span class="text-info">It Matters</span></h2>
+
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="impact-card">⏱️<br>Time Saving</div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="impact-card">🎯<br>Accurate Matching</div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="impact-card">📈<br>Scalable Hiring</div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="impact-card">💼<br>HR Friendly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.impact-card{
+  background:rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:28px;
+  font-size:1.1rem;
+  transition:.3s;
+}
+.impact-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 22px rgba(79,70,229,.4);
+}
+</style>
+
+<!-- ================= FAQ SECTION ================= -->
+<section class="faq py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-3 text-center">
+      Frequently Asked <span class="text-info">Questions</span>
+    </h2>
+    <p class="text-secondary text-center mb-5 fs-5">
+      Everything you need to know before using Resume Screening AI.
+    </p>
+
+    <div class="row align-items-center">
+      <!-- FAQ CONTENT -->
+      <div class="col-lg-7">
+        <div class="accordion" id="faqAccordion">
+
+          <!-- FAQ 1 -->
+          <div class="accordion-item faq-item mb-3">
+            <h2 class="accordion-header" id="faqOne">
+              <button class="accordion-button collapsed fw-semibold"
+                data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">
+                How accurate is Resume Screening AI?
+              </button>
+            </h2>
+            <div id="faqCollapseOne" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                Resume Screening AI achieves <strong>high accuracy</strong> by comparing resumes
+                directly with job descriptions using TF-IDF and cosine similarity — ensuring
+                objective and consistent ranking.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item faq-item mb-3">
+            <h2 class="accordion-header" id="faqTwo">
+              <button class="accordion-button collapsed fw-semibold"
+                data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">
+                Does this system require model training?
+              </button>
+            </h2>
+            <div id="faqCollapseTwo" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                No. The system uses <strong>text similarity techniques</strong> instead of
+                trained models, making it fast, lightweight, and easy to deploy.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item faq-item mb-3">
+            <h2 class="accordion-header" id="faqThree">
+              <button class="accordion-button collapsed fw-semibold"
+                data-bs-toggle="collapse" data-bs-target="#faqCollapseThree">
+                Is candidate data safe and secure?
+              </button>
+            </h2>
+            <div id="faqCollapseThree" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                Yes. Uploaded resumes are processed securely and are not shared with any
+                third-party services. Data privacy is always maintained.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item faq-item">
+            <h2 class="accordion-header" id="faqFour">
+              <button class="accordion-button collapsed fw-semibold"
+                data-bs-toggle="collapse" data-bs-target="#faqCollapseFour">
+                Can this integrate with existing ATS platforms?
+              </button>
+            </h2>
+            <div id="faqCollapseFour" class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-secondary">
+                Yes. Resume Screening AI can be easily integrated into existing
+                Applicant Tracking Systems via APIs or internal workflows.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FAQ IMAGE -->
+      <div class="col-lg-5 text-center mt-4 mt-lg-0">
+        <img src="/static/images/faq-illustration.jpeg" style="border: none; border-radius: 10px;"
+             alt="FAQ Illustration"
+             class="img-fluid faq-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ STYLES ================= -->
+<style>
+.faq{
+  background: radial-gradient(circle at center, #020617 0%, #020617 100%);
+}
+
+.faq-item{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.accordion-button{
+  background: transparent;
+  color: #e5e7eb;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed){
+  color: #06b6d4;
+  background: rgba(255,255,255,0.05);
+}
+
+.accordion-button::after{
+  filter: invert(1);
+}
+
+.accordion-body{
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.accordion-button:hover{
+  color: #06b6d4;
+}
+
+/* FAQ IMAGE */
+.faq-image{
+  max-width: 82%;
+  filter: drop-shadow(0 0 26px rgba(6,182,212,0.35));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.faq-image:hover{
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 36px rgba(6,182,212,0.55));
+}
+</style>
+
+
+{% endblock %}

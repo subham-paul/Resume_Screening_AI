@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}Resume Screening AI{% endblock %}</title>
+
+<!-- Bootstrap & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<link rel="icon" type="image/png" href="/static/images/favicon.jpeg">
+
+
+<style>
+/* =========================================================
+   THEME VARIABLES – RESUME SCREENING AI
+========================================================= */
+:root{
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --accent: #22c55e;
+  --bg-dark: #0f172a;
+  --bg-soft: #020617;
+  --glass: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+}
+
+/* GLOBAL RESET */
+html,body{
+  margin:0;
+  padding:0;
+  width:100vw;
+  overflow-x:hidden;
+  font-family:"Inter",sans-serif;
+  background: radial-gradient(circle at top, #0b122f, #020617);
+  color:#e5e7eb;
+}
+
+/* REMOVE SIDE GAP */
+.navbar > .container-fluid{
+  padding-left:48px!important;
+  padding-right:48px!important;
+}
+
+/* =========================================================
+   LOGO – DOCUMENT + AI FEEL
+========================================================= */
+.logo-ai{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  box-shadow:0 0 24px rgba(79,70,229,.55);
+  animation: floatLogo 3.5s ease-in-out infinite;
+}
+.logo-ai i{
+  font-size:1.4rem;
+  color:#fff;
+}
+@keyframes floatLogo{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar{
+  background:rgba(2,6,23,.7);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(99,102,241,.25);
+  transition:.35s;
+}
+.navbar:hover{
+  background:rgba(2,6,23,.9);
+  box-shadow:0 0 28px rgba(6,182,212,.25);
+}
+
+.navbar-brand{
+  font-weight:800;
+  letter-spacing:.5px;
+  color:#fff!important;
+}
+
+.nav-link{
+  color:#c7d2fe!important;
+  margin:0 14px;
+  font-weight:500;
+  position:relative;
+  transition:.3s;
+}
+.nav-link:hover{
+  color:var(--secondary)!important;
+}
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  transition:.35s;
+}
+.nav-link:hover::after{width:100%}
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+.main-wrapper{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+#backToTop{
+  position:fixed;
+  right:22px;
+  bottom:26px;
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:none;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:1.3rem;
+  cursor:pointer;
+  box-shadow:0 0 26px rgba(79,70,229,.6);
+  z-index:9999;
+  animation: floatBtn 3.2s infinite ease-in-out;
+}
+@keyframes floatBtn{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+/* =========================================================
+   FOOTER – SOFT PROFESSIONAL
+========================================================= */
+footer{
+  position:relative;
+  background:linear-gradient(180deg,#020617,#020617);
+  overflow:hidden;
+  margin-top:90px;
+}
+
+.footer-glass{
+  padding:64px 24px 16px;
+  backdrop-filter:blur(8px);
+}
+
+.footer-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:32px;
+}
+
+.footer-grid h5{
+  color:#fff;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.footer-grid p,a{
+  color:#c7d2fe;
+  text-decoration:none;
+  font-size:.95rem;
+}
+
+.footer-grid a:hover{
+  color:var(--secondary);
+  transform:translateX(6px);
+}
+
+.footer-bottom{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:14px;
+  font-size:.9rem;
+  color:#a5b4fc;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+
+{% block head_extra %}{% endblock %}
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+
+    <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('index') }}">
+      <div class="logo-ai">
+        <i class="bi bi-file-earmark-text-fill"></i>
+      </div>
+      Resume Screening AI
+    </a>
+
+    <button class="navbar-toggler text-light" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-3"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<div class="main-wrapper">
+  {% block content %}{% endblock %}
+</div>
+
+<!-- BACK TO TOP -->
+<div id="backToTop"><i class="bi bi-arrow-up-short"></i></div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-glass">
+    <div class="footer-grid">
+      <div>
+        <h5>Resume Screening AI</h5>
+        <p>AI-powered resume ranking system that helps HR teams shortlist the right candidates faster and smarter.</p>
+      </div>
+
+      <div>
+        <h5>Quick Links</h5>
+        <p><a href="{{ url_for('index') }}">Home</a></p>
+        <p><a href="{{ url_for('dashboard') }}">Dashboard</a></p>
+        <p><a href="{{ url_for('about') }}">About</a></p>
+        <p><a href="{{ url_for('contact') }}">Contact</a></p>
+      </div>
+
+      <div>
+        <h5>Technology</h5>
+        <p>Python · Flask · NLP</p>
+        <p>TF-IDF · Cosine Similarity</p>
+        <p>Bootstrap 5</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Resume Screening AI — Smart ATS & HR Intelligence
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.getElementById("backToTop").style.display =
+    window.scrollY>300?"flex":"none";
+});
+document.getElementById("backToTop").onclick=()=>{
+  window.scrollTo({top:0,behavior:"smooth"});
+};
+</script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

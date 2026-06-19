@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block title %}Contact — Resume Screening AI{% endblock %}
+{% block content %}
+
+<!-- ================= CONTACT HERO ================= -->
+<section class="contact-hero text-center">
+  <div class="container">
+    <h1 class="fw-bold">Get in Touch</h1>
+    <p class="lead text-secondary mt-3 col-lg-8 mx-auto">
+      Have questions, suggestions, or want to collaborate?
+      We’d love to hear from you.
+    </p>
+  </div>
+</section>
+
+<style>
+.contact-hero{
+  padding:80px 0 60px;
+  background:linear-gradient(180deg,#0b122f,#020617);
+}
+</style>
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="py-5">
+  <div class="container">
+
+    <div class="row g-5 align-items-center">
+
+      <!-- LEFT INFO -->
+      <div class="col-lg-5">
+        <div class="contact-info-card">
+          <h4 class="fw-semibold mb-3">Why Contact Us?</h4>
+          <p class="text-secondary">
+            Resume Screening AI is built to demonstrate how AI and NLP can
+            transform recruitment workflows.
+          </p>
+
+          <ul class="list-unstyled mt-4">
+            <li class="mb-3"><i class="bi bi-check-circle-fill"></i> Academic project support</li>
+            <li class="mb-3"><i class="bi bi-check-circle-fill"></i> HR & ATS consultation</li>
+            <li class="mb-3"><i class="bi bi-check-circle-fill"></i> Feature suggestions</li>
+            <li class="mb-3"><i class="bi bi-check-circle-fill"></i> Collaboration opportunities</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="col-lg-7">
+        <div class="contact-form-card">
+          <h4 class="fw-semibold mb-4 text-center">Send a Message</h4>
+
+          <form>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control custom-input" placeholder="Your name">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control custom-input" placeholder="you@example.com">
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Subject</label>
+                <input type="text" class="form-control custom-input" placeholder="Project / Feedback / Query">
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea class="form-control custom-input" rows="5" placeholder="Write your message here..."></textarea>
+              </div>
+
+              <div class="col-12 text-center mt-3">
+                <button class="btn submit-btn btn-lg">
+                  📩 Send Message
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-info-card{
+  background:rgba(255,255,255,.05);
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.12);
+  padding:36px;
+  box-shadow:0 0 36px rgba(79,70,229,.25);
+}
+.contact-info-card i{
+  color:#22c55e;
+  margin-right:8px;
+}
+
+.contact-form-card{
+  background:rgba(255,255,255,.05);
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.12);
+  padding:36px;
+  box-shadow:0 0 36px rgba(6,182,212,.25);
+}
+
+.custom-input{
+  background:rgba(2,6,23,.7);
+  border:1px solid rgba(255,255,255,.18);
+  color:#e5e7eb;
+}
+.custom-input::placeholder{
+  color:#94a3b8;
+}
+.custom-input:focus{
+  background:rgba(2,6,23,.9);
+  border-color:#06b6d4;
+  box-shadow:none;
+}
+
+.submit-btn{
+  background:linear-gradient(135deg,#4f46e5,#06b6d4);
+  color:#fff;
+  border:none;
+  padding:12px 44px;
+  border-radius:30px;
+  font-weight:600;
+  transition:.35s;
+}
+.submit-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 30px rgba(79,70,229,.6);
+}
+</style>
+
+<!-- ================= CTA ================= -->
+<section class="py-5 text-center" style="background:radial-gradient(circle,#020617,#020617)">
+  <div class="container">
+    <h2 class="fw-bold text-info mb-3">Explore the AI Dashboard</h2>
+    <p class="fs-5 mb-4">
+      See how resumes are ranked instantly using AI-powered similarity analysis.
+    </p>
+    <a href="{{ url_for('dashboard') }}" class="btn submit-btn btn-lg">
+      Open Dashboard
+    </a>
+  </div>
+</section>
+
+{% endblock %}
